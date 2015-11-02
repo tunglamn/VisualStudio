@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Пример WPF-EDM</title>
+    <style type="text/css">
+
+P.MsoNormal {
+	MARGIN: 0in 0in 0pt; FONT-FAMILY: "Times New Roman","serif"; FONT-SIZE: 12pt;
+        }
+P {
+	MARGIN: 7.5pt 0in 3.75pt; FONT-FAMILY: "Times New Roman","serif"; FONT-SIZE: 12pt;
+        }
+H3 {
+	FONT-FAMILY: "Times New Roman","serif"; MARGIN-LEFT: 0in; FONT-SIZE: 13.5pt; FONT-WEIGHT: bold; MARGIN-RIGHT: 0in;
+        }
+H1 {
+	FONT-FAMILY: "Times New Roman","serif"; MARGIN-LEFT: 0in; FONT-SIZE: 24pt; FONT-WEIGHT: bold; MARGIN-RIGHT: 0in;
+        }
+    </style>
+</head>
+<body>
+
+    <table border="0" cellpadding="0" cellspacing="0" class="MsoNormalTable" 
+        style="WIDTH: 100%; mso-cellspacing: 0in; mso-yfti-tbllook: 1184; mso-padding-alt: 0in 0in 0in 0in" 
+        width="100%">
+        <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+            <td style="PADDING-BOTTOM: 0in; PADDING-LEFT: 0in; PADDING-RIGHT: 0in; BACKGROUND: #efeff7; PADDING-TOP: 0in">
+                <p class="MsoNormal" style="MARGIN-TOP: 3.75pt">
+                    <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 'Times New Roman'; mso-bidi-font-size: 10.0pt"> <b><span style="COLOR: #000066">Примечание.<o:p> </o:p> </span></b></span><i style="mso-bidi-font-style: normal"> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8pt; mso-bidi-font-size: 13.5pt"> Этот пример предназначен для Microsoft .NET Framework 3.5.<o:p></o:p></span></i></p>
+            </td>
+        </tr>
+    </table>
+    <p xmlns:mshelp="http://msdn.microsoft.com/mshelp" 
+        xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+        <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Это пример Windows Presentation Framework, использующий модель EDM (Entity Data Model) для подключения к простой системе управления заказами в базе данных SQL Server. В этом примере имеется несколько форм WPF, демонстрирующих различные возможности привязки данных. Пример включает следующие компоненты:<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+        <span style="FONT-FAMILY: Symbol; FONT-SIZE: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-size: 8.5pt; mso-bidi-font-family: Symbol"> <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Учебная база данных SQL Server: OMS. Скрипт SQL, включенный в этот пример, может использоваться для создания и заполнения базы данных.<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+        <span style="FONT-FAMILY: Symbol; FONT-SIZE: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-size: 8.5pt; mso-bidi-font-family: Symbol"> <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Уровень доступа к данным. Этот проект библиотеки классов использует модель EDM (Entity Data Model) для сопоставления различных таблиц в базе данных. Он также предоставляет некоторые алгоритмы проверки.<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l1 level1 lfo2; tab-stops: list .5in">
+        <span style="FONT-FAMILY: Symbol; FONT-SIZE: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-size: 8.5pt; mso-bidi-font-family: Symbol"> <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Проект приложения WPF. Использует уровень доступа к данных и отображает их. Проект содержит несколько форм WPF, предназначенных для демонстрации различных возможностей работы с данными, например:<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Простой список элементов<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">DataGrid<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Представление «Подробности» с кнопками перехода<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt"> Основное/Подробности<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Таблицы подстановки<o:p></o:p></span></p>
+    <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 1in; mso-list: l1 level2 lfo2; tab-stops: list 1.0in">
+        <span style="FONT-FAMILY: 'Courier New'; FONT-SIZE: 10pt; mso-fareast-font-family: 'Courier New'; mso-bidi-font-size: 8.5pt"> <span style="mso-list: Ignore">o<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Форматирование и проверка<o:p></o:p></span></p>
+    <p>
+        <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt"><o:p>&nbsp;</o:p></span></p>
+    <h3>
+        <span style="FONT-FAMILY: 'Verdana','sans-serif'; mso-fareast-font-family: 'Times New Roman'"> Запуск примера<o:p></o:p></span></h3>
+    <div>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">1.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Откройте проект примера.<o:p></o:p></span></p>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">2.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Под узлом «Решение» разверните папку <i style="mso-bidi-font-style: normal">Элементы решения</i> и откройте <i style="mso-bidi-font-style: normal">CreateDatabaseOMS.sql</i>.<o:p></o:p></span></p>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">3.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">В редакторе TSQL щелкните правую кнопку мыши и в контекстном меню выберите команду <b style="mso-bidi-font-weight: normal">Выполнить SQL</b>.<o:p></o:p></span></p>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">4.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">При появлении запроса выберите режим соединения, а затем выберите существующее или создайте новое подключение к серверу SQL Server.<o:p></o:p></span></p>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">5.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Закройте редактор TSQL<o:p></o:p></span></p>
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l0 level1 lfo4; tab-stops: list .5in">
+            <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"> <span style="mso-list: Ignore">6.<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Нажмите клавишу F5, чтобы выполнить построение и запустить пример<o:p></o:p></span></p>
+    </div>
+    <h1>
+        <span style="FONT-FAMILY: 'Verdana','sans-serif'; COLOR: #003399; FONT-SIZE: 10pt; mso-fareast-font-family: 'Times New Roman'"> Требования</span></h1>
+    <div id="requirementsTitleSection">
+        <p style="TEXT-INDENT: -0.25in; MARGIN-LEFT: 0.5in; mso-list: l2 level1 lfo6; tab-stops: list .5in">
+            <span style="FONT-FAMILY: Symbol; FONT-SIZE: 10pt; mso-fareast-font-family: Symbol; mso-bidi-font-size: 8.5pt; mso-bidi-font-family: Symbol"> <span style="mso-list: Ignore">·<span style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span> <span style="FONT-FAMILY: 'Verdana','sans-serif'; FONT-SIZE: 8.5pt">Microsoft SQL Server 2005 или более поздняя версия<o:p></o:p></span></p>
+    </div>
+
+</body>
+</html>
+

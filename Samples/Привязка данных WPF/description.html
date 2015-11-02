@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Привязка данных WPF в Visual Studio 2010 RTM</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Привязка данных WPF в Visual Studio 2010 RTM</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Технологии">Технологии</label>
+                        <div id="Технологии">
+                            WPF, Entity Framework
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Темы">Темы</label>
+                        <div id="Темы">
+                            Data Binding
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Desktop, Data
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Последнее обновление</label>
+                    <div id="LastUpdated">17.02.2011</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">Лицензия</label>
+                    <div id="License">
+                        <a href="license.rtf">Пользовательская</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/WPF-Databinding-in-Visual-5a9c9bb3">Просмотреть этот пример в Интернете</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Копировать код';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td>
+<p><strong>При&#1084;ечание.&nbsp;</strong><em>Этот при&#1084;ер предназначен для Microsoft .NET Framework 3.5.</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Это при&#1084;ер Windows Presentation Framework, использующий &#1084;одель EDM (Entity Data Model) для подключения к простой систе&#1084;е управления заказа&#1084;и в базе данных SQL Server. В это&#1084; при&#1084;ере и&#1084;еется несколько фор&#1084; WPF, де&#1084;онстрирующих различные воз&#1084;ожности привязки
+ данных. При&#1084;ер включает следующие ко&#1084;поненты:</p>
+<ul>
+<li>Учебная база данных SQL Server: OMS. Скрипт SQL, включенный в этот при&#1084;ер, &#1084;ожет использоваться для создания и заполнения базы данных.
+</li><li>Уровень доступа к данны&#1084;. Этот проект библиотеки классов использует &#1084;одель EDM (Entity Data Model) для сопоставления различных таблиц в базе данных. Он также предоставляет некоторые алгорит&#1084;ы проверки.
+</li><li>Проект приложения WPF. Использует уровень доступа к данных и отображает их. Проект содержит несколько фор&#1084; WPF, предназначенных для де&#1084;онстрации различных воз&#1084;ожностей работы с данны&#1084;и, напри&#1084;ер:
+</li></ul>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;Простой список эле&#1084;ентов</p>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;DataGrid</p>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;Представление &laquo;Подробности&raquo; с кнопка&#1084;и перехода</p>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;Основное/Подробности</p>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;Таблицы подстановки</p>
+<p>o&nbsp;&nbsp;&nbsp;&nbsp;Фор&#1084;атирование и проверка</p>
+<p>&nbsp;</p>
+<h3>Запуск при&#1084;ера</h3>
+<div>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Откройте проект при&#1084;ера.</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Под узло&#1084; &laquo;Решение&raquo; разверните папку&nbsp;<em>Эле&#1084;енты решения</em>&nbsp;и откройте&nbsp;<em>CreateDatabaseOMS.sql</em>.</p>
+<p>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В редакторе TSQL щелкните правую кнопку &#1084;ыши и в контекстно&#1084; &#1084;еню выберите ко&#1084;анду&nbsp;<strong>Выполнить SQL</strong>.</p>
+<p>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;При появлении запроса выберите режи&#1084; соединения, а зате&#1084; выберите существующее или создайте новое подключение к серверу SQL Server.</p>
+<p>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Закройте редактор TSQL</p>
+<p>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Наж&#1084;ите клавишу F5, чтобы выполнить построение и запустить при&#1084;ер</p>
+</div>
+<h1>Требования</h1>
+<div>
+<ul>
+<li>Microsoft SQL Server 2005 или более поздняя версия </li></ul>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>
